@@ -2,7 +2,7 @@
 Summary:	Scalable, non-blocking web server and tools
 Name:		python3-tornado
 Version:	2.3
-Release:	0.1
+Release:	1
 License:	Apache v2.0
 Group:          Libraries/Python
 Source0:	https://github.com/downloads/facebook/tornado/%{module}-%{version}.tar.gz
@@ -12,7 +12,6 @@ BuildRequires:	python3-devel
 BuildRequires:	python3-devel-tools
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
-Requires:	python3-%{mname} = %{version}-%{release}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
