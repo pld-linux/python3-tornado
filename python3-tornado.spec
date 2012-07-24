@@ -1,11 +1,12 @@
+%define	module	tornado
 Summary:	Scalable, non-blocking web server and tools
-Name:		tornado
-Version:	2.3.0
+Name:		python3-tornado
+Version:	2.3
 Release:	0.1
 License:	Apache v2.0
-Group:		Networking/Daemons/HTTP
-Source0:	https://github.com/downloads/facebook/tornado/%{name}-%{version}.tar.gz
-# Source0-md5:	490ccc2da9d6de9c37c7df05c1197ac5
+Group:          Libraries/Python
+Source0:	https://github.com/downloads/facebook/tornado/%{module}-%{version}.tar.gz
+# Source0-md5:	810c3ecd425924fbf0aa1fa040f93ad1
 URL:		http://ipython.org
 BuildRequires:	python3-devel
 BuildRequires:	python3-devel-tools
@@ -23,7 +24,7 @@ webapp, but with additional tools and optimizations to take advantage
 of the underlying non-blocking infrastructure.
 
 %prep
-%setup -q
+%setup -q -n %{module}-%{version}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -35,8 +36,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/*
-%defattr(644,root,root,755)
-%doc docs/README.txt
-%{py3_sitescriptdir}/%{name}
+%{py3_sitescriptdir}/%{module}
 %{py3_sitescriptdir}/*.egg-info
