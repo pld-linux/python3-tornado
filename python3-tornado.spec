@@ -7,7 +7,7 @@ License:	Apache v2.0
 Group:          Libraries/Python
 Source0:	https://github.com/downloads/facebook/tornado/%{module}-%{version}.tar.gz
 # Source0-md5:	810c3ecd425924fbf0aa1fa040f93ad1
-URL:		http://ipython.org
+URL:		http://www.tornadoweb.org/
 BuildRequires:	python3-devel
 BuildRequires:	python3-devel-tools
 BuildRequires:	rpm-pythonprov
