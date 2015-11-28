@@ -28,7 +28,7 @@ of the underlying non-blocking infrastructure.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python3 ./setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
+python3 %py_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
