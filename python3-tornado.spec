@@ -11,7 +11,7 @@ URL:		http://www.tornadoweb.org/
 BuildRequires:	python3-devel
 BuildRequires:	python3-devel-tools
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
