@@ -56,9 +56,7 @@ długotrwałego połączenia z każdym użytkownikiem.
 Summary:	API documentation for Python tornado module
 Summary(pl.UTF-8):	Dokumentacja API modułu Pythona tornado
 Group:		Documentation
-%if "%{_rpmversion}" >= "4.6"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 API documentation for Python tornado module.
