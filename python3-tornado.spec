@@ -16,8 +16,8 @@ Source0:	https://files.pythonhosted.org/packages/source/t/tornado/tornado-%{vers
 # Source0-md5:	32fbad606b439c3e1bf4e79d4e872741
 URL:		https://www.tornadoweb.org/
 %if %{with python3}
-BuildRequires:	python3-devel >= 1:3.5
-BuildRequires:	python3-modules >= 1:3.5
+BuildRequires:	python3-devel >= 1:3.7
+BuildRequires:	python3-modules >= 1:3.7
 BuildRequires:	python3-setuptools
 %if %{with tests}
 # SO_REUSEPORT option
@@ -34,7 +34,7 @@ BuildRequires:	python3-sphinx_rtd_theme
 BuildRequires:	python3-twisted
 BuildRequires:	sphinx-pdg-3
 %endif
-Requires:	python3-modules >= 1:3.5
+Requires:	python3-modules >= 1:3.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
