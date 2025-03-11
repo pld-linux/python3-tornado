@@ -8,7 +8,7 @@ Summary:	Web framework and asynchronous networking library
 Summary(pl.UTF-8):	Szkielet WWW i asynchroniczna biblioteka sieciowa
 Name:		python3-tornado
 Version:	6.2
-Release:	2
+Release:	3
 License:	Apache v2.0
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/tornado/
