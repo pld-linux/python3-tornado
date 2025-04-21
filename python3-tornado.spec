@@ -8,12 +8,13 @@ Summary:	Web framework and asynchronous networking library
 Summary(pl.UTF-8):	Szkielet WWW i asynchroniczna biblioteka sieciowa
 Name:		python3-tornado
 Version:	6.2
-Release:	3
+Release:	4
 License:	Apache v2.0
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/tornado/
 Source0:	https://files.pythonhosted.org/packages/source/t/tornado/tornado-%{version}.tar.gz
 # Source0-md5:	32fbad606b439c3e1bf4e79d4e872741
+Patch0:		asyncio-docs.patch
 URL:		https://www.tornadoweb.org/
 %if %{with python3}
 BuildRequires:	python3-devel >= 1:3.7
@@ -29,10 +30,9 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 BuildRequires:	sed >= 4.0
 %if %{with doc}
-BuildRequires:	python3-sphinxcontrib-asyncio
 BuildRequires:	python3-sphinx_rtd_theme
 BuildRequires:	python3-twisted
-BuildRequires:	sphinx-pdg-3
+BuildRequires:	sphinx-pdg-3 >= 6
 %endif
 Requires:	python3-modules >= 1:3.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -66,6 +66,7 @@ Dokumentacja API modułu Pythona tornado.
 
 %prep
 %setup -q -n tornado-%{version}
+%patch -P0 -p1
 
 %{__sed} -i -e '1s,/usr/bin/env python3\?,%{__python3},' demos/*/*.py
 

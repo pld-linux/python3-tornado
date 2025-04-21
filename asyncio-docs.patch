@@ -1,0 +1,10 @@
+--- tornado-6.2/docs/conf.py.orig	2022-07-04 00:11:56.000000000 +0200
++++ tornado-6.2/docs/conf.py	2025-04-21 22:11:44.155572853 +0200
+@@ -19,7 +19,6 @@
+     "sphinx.ext.doctest",
+     "sphinx.ext.intersphinx",
+     "sphinx.ext.viewcode",
+-    "sphinxcontrib.asyncio",
+ ]
+ 
+ primary_domain = "py"
