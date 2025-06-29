@@ -7,18 +7,17 @@
 Summary:	Web framework and asynchronous networking library
 Summary(pl.UTF-8):	Szkielet WWW i asynchroniczna biblioteka sieciowa
 Name:		python3-tornado
-Version:	6.2
-Release:	4
+Version:	6.5.1
+Release:	1
 License:	Apache v2.0
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/tornado/
 Source0:	https://files.pythonhosted.org/packages/source/t/tornado/tornado-%{version}.tar.gz
-# Source0-md5:	32fbad606b439c3e1bf4e79d4e872741
-Patch0:		asyncio-docs.patch
+# Source0-md5:	e3e3d74e2fedffacdacd8626d0c17a37
 URL:		https://www.tornadoweb.org/
 %if %{with python3}
-BuildRequires:	python3-devel >= 1:3.7
-BuildRequires:	python3-modules >= 1:3.7
+BuildRequires:	python3-devel >= 1:3.9
+BuildRequires:	python3-modules >= 1:3.9
 BuildRequires:	python3-setuptools
 %if %{with tests}
 # SO_REUSEPORT option
@@ -34,7 +33,7 @@ BuildRequires:	python3-sphinx_rtd_theme
 BuildRequires:	python3-twisted
 BuildRequires:	sphinx-pdg-3 >= 6
 %endif
-Requires:	python3-modules >= 1:3.7
+Requires:	python3-modules >= 1:3.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -66,9 +65,6 @@ Dokumentacja API modułu Pythona tornado.
 
 %prep
 %setup -q -n tornado-%{version}
-%patch -P0 -p1
-
-%{__sed} -i -e '1s,/usr/bin/env python3\?,%{__python3},' demos/*/*.py
 
 %build
 TORNADO_EXTENSION=1 \
@@ -88,11 +84,9 @@ sphinx-build-3 -b html -n -d docs/build/doctrees docs docs/build/html
 rm -rf $RPM_BUILD_ROOT
 
 %py3_install
+
 # just tornado tests with their data
 %{__rm} -r $RPM_BUILD_ROOT%{py3_sitedir}/tornado/test
-
-install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-cp -a demos/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -107,7 +101,6 @@ rm -rf $RPM_BUILD_ROOT
 %{py3_sitedir}/tornado/platform
 %{py3_sitedir}/tornado/__pycache__
 %{py3_sitedir}/tornado-%{version}-py*.egg-info
-%{_examplesdir}/%{name}-%{version}
 
 %if %{with doc}
 %files apidocs
